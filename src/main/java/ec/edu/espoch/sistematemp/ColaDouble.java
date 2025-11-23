@@ -15,18 +15,18 @@ public class ColaDouble {
         tamaño = 0;
     }
 
-    public boolean estaVacia() {
+    public boolean isEmpty() {
         return tamaño == 0;
     }
 
-    public boolean estaLlena() {
+    public boolean isfull() {
         return tamaño == datos.length;
     }
 
     // Registrar nueva temperatura
     public void encolar(double valor) {
-        if (estaLlena()) {
-            System.out.println("⚠ La cola está llena. No se puede registrar otra temperatura.");
+        if (isfull()) {
+            System.out.println("La cola está llena. No se puede registrar otra temperatura.");
             return;
         }
         fin = (fin + 1) % datos.length;
@@ -36,8 +36,8 @@ public class ColaDouble {
 
     // Procesar la temperatura más antigua
     public double desencolar() {
-        if (estaVacia()) {
-            System.out.println("⚠ No hay temperaturas para procesar.");
+        if (isEmpty()) {
+            System.out.println("No hay temperaturas para procesar.");
             return -1;
         }
         double temp = datos[frente];
@@ -48,7 +48,7 @@ public class ColaDouble {
 
     // Ver la siguiente temperatura a procesar
     public double verFrente() {
-        if (estaVacia()) {
+        if (isEmpty()) {
             System.out.println("Cola vacía.");
             return -1;
         }
@@ -57,8 +57,8 @@ public class ColaDouble {
 
     // Visualizar el registro completo
     public void mostrar() {
-        if (estaVacia()) {
-            System.out.println(" Registro vacío.");
+        if (isEmpty()) {
+            System.out.println("Registro vacío.");
             return;
         }
 
